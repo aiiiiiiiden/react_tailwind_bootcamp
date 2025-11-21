@@ -11,7 +11,9 @@
       "WebFetch(domain:api.github.com)",
       "Bash(curl:*)",
       "Skill(skill-creator)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []
