@@ -48,7 +48,7 @@ src/
 ```bash
 npm create vite@latest landing-page -- --template react
 cd landing-page
-npm install -D tailwindcss@next @tailwindcss/vite@next
+npm install -D tailwindcss @tailwindcss/vite
 ```
 
 ---

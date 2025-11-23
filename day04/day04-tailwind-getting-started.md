@@ -116,7 +116,7 @@ npm create vite@latest my-tailwind-app -- --template react
 cd my-tailwind-app
 
 # 2. Tailwind 설치
-npm install -D tailwindcss@next @tailwindcss/vite@next
+npm install -D tailwindcss @tailwindcss/vite
 
 # 3. Vite 설정 (vite.config.js)
 import { defineConfig } from 'vite'

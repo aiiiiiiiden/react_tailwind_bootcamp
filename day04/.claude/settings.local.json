@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(skill-creator)",
+      "Bash(python /Users/cody/.claude/skills/skill-creator/scripts/init_skill.py:*)",
+      "Bash(python /Users/cody/.claude/skills/skill-creator/scripts/package_skill.py:*)",
+      "Skill(tailwind-v4-installer)",
+      "Bash(npm install:*)",
+      "WebSearch",
+      "Bash(timeout 5 npm run dev:*)",
+      "Bash(npm run dev)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

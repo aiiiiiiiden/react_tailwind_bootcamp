@@ -36,7 +36,7 @@ paginate: true
 ```bash
 npm create vite@latest dashboard -- --template react
 cd dashboard
-npm install -D tailwindcss@next @tailwindcss/vite@next
+npm install -D tailwindcss @tailwindcss/vite
 ```
 
 **파일 구조**:
