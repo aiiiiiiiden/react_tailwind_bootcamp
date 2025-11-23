@@ -5,6 +5,7 @@ paginate: true
 ---
 
 # Day 5: Spacing과 Sizing 시스템
+
 ## React + Tailwind Bootcamp
 
 **학습 시간**: 30분
@@ -99,7 +100,6 @@ ml-4   // margin-left
 export default function SpacingDemo() {
   return (
     <div className="p-8 bg-gray-100">
-
       {/* 다양한 padding */}
       <div className="mb-4">
         <div className="p-2 bg-blue-500 text-white mb-2">p-2 (8px)</div>
@@ -116,7 +116,6 @@ export default function SpacingDemo() {
           px-2 py-8 (세로 넓음)
         </div>
       </div>
-
     </div>
   );
 }
@@ -202,7 +201,6 @@ h-[80vh]
 export default function SizingDemo() {
   return (
     <div className="p-8 space-y-4">
-
       {/* 고정 너비 */}
       <div className="w-32 h-32 bg-blue-500 text-white flex items-center justify-center">
         w-32 h-32
@@ -222,7 +220,6 @@ export default function SizingDemo() {
       <div className="w-[300px] h-[100px] bg-purple-500 text-white flex items-center justify-center">
         w-[300px] h-[100px]
       </div>
-
     </div>
   );
 }
@@ -260,13 +257,12 @@ max-h-screen  min-h-screen  max-h-[500px]
 export default function ResponsiveContainer() {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
-
       {/* 반응형 컨테이너 */}
       <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow">
         <h1 className="text-2xl font-bold mb-4">반응형 컨테이너</h1>
         <p className="text-gray-600 mb-4">
-          이 컨테이너는 최대 너비가 896px이며, 화면 중앙에 정렬됩니다.
-          작은 화면에서는 너비가 100%가 됩니다.
+          이 컨테이너는 최대 너비가 896px이며, 화면 중앙에 정렬됩니다. 작은
+          화면에서는 너비가 100%가 됩니다.
         </p>
 
         {/* 내부 그리드 */}
@@ -276,7 +272,6 @@ export default function ResponsiveContainer() {
           <div className="bg-blue-100 p-4 rounded">Box 3</div>
         </div>
       </div>
-
     </div>
   );
 }
@@ -317,7 +312,6 @@ export default function ResponsiveContainer() {
 export default function Card({ title, description, imageUrl }) {
   return (
     <div className="max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-
       {/* 이미지 */}
       <img
         src={imageUrl || "https://picsum.photos/400/200"}
@@ -327,11 +321,10 @@ export default function Card({ title, description, imageUrl }) {
 
       {/* 콘텐츠 */}
       <div className="p-6">
-        <h2 className="text-2xl font-bold mb-2">
-          {title || "카드 제목"}
-        </h2>
+        <h2 className="text-2xl font-bold mb-2">{title || "카드 제목"}</h2>
         <p className="text-gray-600 mb-4 leading-relaxed">
-          {description || "카드 설명입니다. Tailwind의 spacing을 활용해 일관된 여백을 만들었습니다."}
+          {description ||
+            "카드 설명입니다. Tailwind의 spacing을 활용해 일관된 여백을 만들었습니다."}
         </p>
 
         {/* 태그 */}
@@ -357,7 +350,6 @@ export default function Card({ title, description, imageUrl }) {
           <span>❤️ 24</span>
         </div>
       </div>
-
     </div>
   );
 }
@@ -452,6 +444,7 @@ export default function App() {
 ## 핵심 정리
 
 ### Spacing
+
 - **Scale**: 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24
 - **Padding**: `p-*`, `px-*`, `py-*`, `pt-*`...
 - **Margin**: `m-*`, `mx-*`, `my-*`, `mx-auto` (중앙)
@@ -459,6 +452,7 @@ export default function App() {
 - **Space**: `space-x-*`, `space-y-*`
 
 ### Sizing
+
 - **Width**: `w-*`, `w-1/2`, `w-full`, `w-screen`
 - **Height**: `h-*`, `h-1/2`, `h-full`, `h-screen`
 - **Max/Min**: `max-w-*`, `min-w-*`, `max-h-*`, `min-h-*`
@@ -478,6 +472,7 @@ export default function App() {
 ## 내일 배울 내용
 
 ### Day 6: Color와 Typography
+
 - Color palette 완벽 활용
 - 폰트 크기, 굵기, 행간
 - 실습: 타이포그래피 시스템 구축
@@ -489,10 +484,12 @@ export default function App() {
 ## 과제 (선택)
 
 1. **프로필 카드**
+
    - 이미지, 이름, 설명, 버튼
    - 적절한 spacing 활용
 
 2. **그리드 갤러리**
+
    - 3열 그리드
    - 각 아이템에 일관된 간격
 

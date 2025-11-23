@@ -8,7 +8,8 @@
       "Bash(npm install:*)",
       "WebSearch",
       "Bash(timeout 5 npm run dev:*)",
-      "Bash(npm run dev)"
+      "Bash(npm run dev)",
+      "Bash(npm create:*)"
     ],
     "deny": [],
     "ask": []
