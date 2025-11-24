@@ -5,6 +5,7 @@ paginate: true
 ---
 
 # Day 6: Color와 Typography
+
 ## React + Tailwind Bootcamp
 
 **학습 시간**: 30분
@@ -72,16 +73,15 @@ export default function ColorScale() {
 
   return (
     <div className="p-8 space-y-8">
-
       {/* Blue Scale */}
       <div>
         <h2 className="text-xl font-bold mb-4">Blue Scale</h2>
         <div className="space-y-2">
-          {scales.map(scale => (
+          {scales.map((scale) => (
             <div
               key={scale}
               className={`bg-blue-${scale} p-4 rounded`}
-              style={{ color: scale >= 500 ? 'white' : 'black' }}
+              style={{ color: scale >= 500 ? "white" : "black" }}
             >
               blue-{scale}
             </div>
@@ -93,18 +93,17 @@ export default function ColorScale() {
       <div>
         <h2 className="text-xl font-bold mb-4">Gray Scale</h2>
         <div className="space-y-2">
-          {scales.map(scale => (
+          {scales.map((scale) => (
             <div
               key={scale}
               className={`bg-gray-${scale} p-4 rounded`}
-              style={{ color: scale >= 500 ? 'white' : 'black' }}
+              style={{ color: scale >= 500 ? "white" : "black" }}
             >
               gray-{scale}
             </div>
           ))}
         </div>
       </div>
-
     </div>
   );
 }
@@ -116,22 +115,22 @@ export default function ColorScale() {
 
 ```jsx
 // Background
-bg-blue-500         // 배경색
-hover:bg-blue-600   // 호버 시 배경색
+bg - blue - 500; // 배경색
+hover: bg - blue - 600; // 호버 시 배경색
 
 // Text
-text-gray-900       // 텍스트 색
-text-white          // 흰색 텍스트
+text - gray - 900; // 텍스트 색
+text - white; // 흰색 텍스트
 
 // Border
-border-gray-200     // 테두리 색
-border-2            // 테두리 두께
-border             // 1px 테두리
+border - gray - 200; // 테두리 색
+border - 2; // 테두리 두께
+border; // 1px 테두리
 
 // Ring (Focus 효과)
-ring-2              // 2px ring
-ring-blue-500       // ring 색상
-focus:ring-2        // focus 시 ring
+ring - 2; // 2px ring
+ring - blue - 500; // ring 색상
+focus: ring - 2; // focus 시 ring
 ```
 
 ---
@@ -160,18 +159,16 @@ focus:ring-2        // focus 시 ring
 ## 실습 2: Alert 컴포넌트 (5분)
 
 ```jsx
-function Alert({ type = 'info', children }) {
+function Alert({ type = "info", children }) {
   const styles = {
-    info: 'bg-blue-50 text-blue-800 border-blue-200',
-    success: 'bg-green-50 text-green-800 border-green-200',
-    warning: 'bg-yellow-50 text-yellow-800 border-yellow-200',
-    error: 'bg-red-50 text-red-800 border-red-200',
+    info: "bg-blue-50 text-blue-800 border-blue-200",
+    success: "bg-green-50 text-green-800 border-green-200",
+    warning: "bg-yellow-50 text-yellow-800 border-yellow-200",
+    error: "bg-red-50 text-red-800 border-red-200",
   };
 
   return (
-    <div className={`p-4 border-l-4 rounded ${styles[type]}`}>
-      {children}
-    </div>
+    <div className={`p-4 border-l-4 rounded ${styles[type]}`}>{children}</div>
   );
 }
 
@@ -213,15 +210,15 @@ text-9xl     // 128px
 ## Font Weight
 
 ```jsx
-font-thin        // 100
-font-extralight  // 200
-font-light       // 300
-font-normal      // 400 (기본)
-font-medium      // 500
-font-semibold    // 600
-font-bold        // 700
-font-extrabold   // 800
-font-black       // 900
+font - thin; // 100
+font - extralight; // 200
+font - light; // 300
+font - normal; // 400 (기본)
+font - medium; // 500
+font - semibold; // 600
+font - bold; // 700
+font - extrabold; // 800
+font - black; // 900
 ```
 
 **실전**: `font-normal`, `font-medium`, `font-semibold`, `font-bold`만 주로 사용
@@ -234,7 +231,6 @@ font-black       // 900
 export default function TypographySystem() {
   return (
     <div className="max-w-2xl mx-auto p-8">
-
       {/* Headings */}
       <h1 className="text-4xl font-bold mb-2">Heading 1</h1>
       <h2 className="text-3xl font-bold mb-2">Heading 2</h2>
@@ -244,20 +240,19 @@ export default function TypographySystem() {
 
       {/* Body Text */}
       <p className="text-base text-gray-700 mb-4 leading-relaxed">
-        일반 본문 텍스트입니다. text-base (16px)와 leading-relaxed를 사용했습니다.
-        가독성이 좋은 행간을 제공합니다.
+        일반 본문 텍스트입니다. text-base (16px)와 leading-relaxed를
+        사용했습니다. 가독성이 좋은 행간을 제공합니다.
       </p>
 
       <p className="text-sm text-gray-600 mb-4">
-        작은 텍스트입니다. text-sm (14px)를 사용합니다.
-        부가 설명이나 캡션에 적합합니다.
+        작은 텍스트입니다. text-sm (14px)를 사용합니다. 부가 설명이나 캡션에
+        적합합니다.
       </p>
 
       <p className="text-xs text-gray-500">
-        더 작은 텍스트입니다. text-xs (12px)를 사용합니다.
-        메타 정보나 라벨에 사용됩니다.
+        더 작은 텍스트입니다. text-xs (12px)를 사용합니다. 메타 정보나 라벨에
+        사용됩니다.
       </p>
-
     </div>
   );
 }
@@ -268,15 +263,16 @@ export default function TypographySystem() {
 ## Line Height (행간)
 
 ```jsx
-leading-none      // 1
-leading-tight     // 1.25
-leading-snug      // 1.375
-leading-normal    // 1.5 (기본)
-leading-relaxed   // 1.625
-leading-loose     // 2
+leading - none; // 1
+leading - tight; // 1.25
+leading - snug; // 1.375
+leading - normal; // 1.5 (기본)
+leading - relaxed; // 1.625
+leading - loose; // 2
 ```
 
 **실전**:
+
 - 제목: `leading-tight` 또는 `leading-snug`
 - 본문: `leading-normal` 또는 `leading-relaxed`
 
@@ -311,7 +307,6 @@ normal-case       // 기본
 export default function BlogPost() {
   return (
     <article className="max-w-3xl mx-auto px-4 py-12">
-
       {/* Header */}
       <header className="mb-8">
         <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
@@ -329,7 +324,8 @@ export default function BlogPost() {
         </h1>
 
         <p className="text-xl text-gray-600 leading-relaxed">
-          색상과 타이포그래피를 활용해 전문적인 디자인을 만드는 방법을 알아봅니다.
+          색상과 타이포그래피를 활용해 전문적인 디자인을 만드는 방법을
+          알아봅니다.
         </p>
       </header>
 
@@ -352,7 +348,8 @@ export default function BlogPost() {
 
         <p className="text-gray-700 leading-relaxed mb-6">
           좋은 타이포그래피는 콘텐츠를 더 읽기 쉽고 이해하기 쉽게 만듭니다.
-          Tailwind CSS는 일관된 타이포그래피 시스템을 제공해 이를 쉽게 구현할 수 있게 합니다.
+          Tailwind CSS는 일관된 타이포그래피 시스템을 제공해 이를 쉽게 구현할 수
+          있게 합니다.
         </p>
 
         <blockquote className="border-l-4 border-blue-500 pl-4 py-2 my-6 italic text-gray-600 bg-blue-50">
@@ -387,7 +384,8 @@ export default function BlogPost() {
         </div>
 
         <p className="text-gray-700 leading-relaxed">
-          이러한 원칙을 따르면 누구나 쉽게 읽을 수 있는 아름다운 콘텐츠를 만들 수 있습니다.
+          이러한 원칙을 따르면 누구나 쉽게 읽을 수 있는 아름다운 콘텐츠를 만들
+          수 있습니다.
         </p>
       </div>
 
@@ -396,15 +394,18 @@ export default function BlogPost() {
         <div className="flex items-center justify-between">
           <div className="flex gap-2">
             <span className="text-sm text-gray-500">태그:</span>
-            <span className="text-sm text-blue-600 hover:underline cursor-pointer">Tailwind</span>
-            <span className="text-sm text-blue-600 hover:underline cursor-pointer">Design</span>
+            <span className="text-sm text-blue-600 hover:underline cursor-pointer">
+              Tailwind
+            </span>
+            <span className="text-sm text-blue-600 hover:underline cursor-pointer">
+              Design
+            </span>
           </div>
           <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors">
             공유하기
           </button>
         </div>
       </footer>
-
     </article>
   );
 }
@@ -458,23 +459,27 @@ font-mono        // 고정폭 (코드용)
 
 ```jsx
 // Typography.jsx - 재사용 컴포넌트
-export function H1({ children, className = '' }) {
+export function H1({ children, className = "" }) {
   return (
-    <h1 className={`text-4xl font-bold text-gray-900 leading-tight ${className}`}>
+    <h1
+      className={`text-4xl font-bold text-gray-900 leading-tight ${className}`}
+    >
       {children}
     </h1>
   );
 }
 
-export function H2({ children, className = '' }) {
+export function H2({ children, className = "" }) {
   return (
-    <h2 className={`text-3xl font-bold text-gray-900 leading-tight ${className}`}>
+    <h2
+      className={`text-3xl font-bold text-gray-900 leading-tight ${className}`}
+    >
       {children}
     </h2>
   );
 }
 
-export function Body({ children, className = '' }) {
+export function Body({ children, className = "" }) {
   return (
     <p className={`text-base text-gray-700 leading-relaxed ${className}`}>
       {children}
@@ -482,12 +487,8 @@ export function Body({ children, className = '' }) {
   );
 }
 
-export function Caption({ children, className = '' }) {
-  return (
-    <p className={`text-sm text-gray-500 ${className}`}>
-      {children}
-    </p>
-  );
+export function Caption({ children, className = "" }) {
+  return <p className={`text-sm text-gray-500 ${className}`}>{children}</p>;
 }
 ```
 
@@ -497,15 +498,15 @@ export function Caption({ children, className = '' }) {
 
 ```jsx
 // Text Opacity
-text-gray-900/50     // 50% 불투명도
-text-blue-500/75     // 75% 불투명도
+text - gray - 900 / 50; // 50% 불투명도
+text - blue - 500 / 75; // 75% 불투명도
 
 // Background Opacity
-bg-black/50          // 반투명 검정 (overlay)
-bg-white/90          // 거의 불투명한 흰색
+bg - black / 50; // 반투명 검정 (overlay)
+bg - white / 90; // 거의 불투명한 흰색
 
 // Border Opacity
-border-gray-200/50
+border - gray - 200 / 50;
 ```
 
 **v4 특징**: `/` 문법으로 간단히 opacity 적용!
@@ -515,12 +516,14 @@ border-gray-200/50
 ## 핵심 정리
 
 ### Colors
+
 - **Scale**: 50 (밝음) ~ 900 (어두움)
 - **Gray 선택**: slate (차가움), gray (중성), zinc (따뜻함)
 - **Text**: gray-900 (제목), gray-700 (본문), gray-500 (메타)
 - **Background**: white, gray-50, gray-100
 
 ### Typography
+
 - **Size**: text-base (본문), text-xl~4xl (제목)
 - **Weight**: font-normal, font-medium, font-semibold, font-bold
 - **Leading**: leading-tight (제목), leading-relaxed (본문)
@@ -541,6 +544,7 @@ border-gray-200/50
 ## 내일 배울 내용
 
 ### Day 7: 레이아웃 패턴 실전
+
 - 자주 쓰이는 레이아웃 패턴
 - Flexbox vs Grid 선택 기준
 - 실습: 완전한 페이지 레이아웃
@@ -552,10 +556,12 @@ border-gray-200/50
 ## 과제 (선택)
 
 1. **Color Theme 만들기**
+
    - Primary, Secondary, Success, Danger 색상 정의
    - 버튼 컴포넌트에 적용
 
 2. **블로그 레이아웃**
+
    - 제목, 부제, 본문, 캡션 구분
    - 일관된 타이포그래피 시스템
 

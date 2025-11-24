@@ -13,7 +13,11 @@
       "Skill(skill-creator)",
       "Bash(python3:*)",
       "Bash(npm create:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Skill(vite-createor)",
+      "Skill(tailwind-v4-installer)",
+      "Bash(timeout 5 npm run dev:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
