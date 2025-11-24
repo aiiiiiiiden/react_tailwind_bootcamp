@@ -62,6 +62,15 @@ function App() {
         {/* Smallest Text */}
         <p className='text-xs text-gray-500'>더 작은 텍스트입니다. text-xs (12px)를 사용합니다. 메타 정보나 라벨에 사용됩니다.</p>
       </div>
+      {/* Text Color 실전 조합 */}
+      <div className='space-y-2'>
+        <p className='text-gray-900 dark:text-white'>제목2</p>
+        <p className='text-gray-700 dark:text-gray-300'>본문2</p>
+        <p className='text-gray-600 dark:text-gray-400'>부제목2</p>
+        <p className='text-gray-500 dark:text-gray-500'>메타정보2</p>
+        <p className='text-blue-600 hover:text-blue-700'>링크2</p>
+        <p className='text-gray-400 dark:text-gray-400'>비활성화2</p>
+      </div>
     </div>
   );
 }

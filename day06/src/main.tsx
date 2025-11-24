@@ -4,11 +4,13 @@ import './index.css'
 import App from './App.tsx'
 import Alert from './Alert.tsx'
 import BlogPostLayout from './BlogPostLayout.tsx'
+import { H1, H2 } from './Typography.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <H1>Color and Typography</H1>
     <App />
-    {/* Alert 컴포넌트 */}
+    <H2>Alert Component</H2>
     <Alert type='error'>
       <h1>Alert</h1>
       <p>This is an error alert</p>
@@ -25,6 +27,6 @@ createRoot(document.getElementById('root')!).render(
       <h1>Alert</h1>
       <p>This is an info alert</p>
     </Alert>
-    <BlogPostLayout />
+    {/* <BlogPostLayout /> */}
   </StrictMode>,
 )
