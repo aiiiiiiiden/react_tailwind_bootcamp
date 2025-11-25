@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import Alert from './Alert.tsx'
-import BlogPostLayout from './BlogPostLayout.tsx'
+// import BlogPostLayout from './BlogPostLayout.tsx'
 import { H1, H2 } from './Typography.tsx'
 
 createRoot(document.getElementById('root')!).render(

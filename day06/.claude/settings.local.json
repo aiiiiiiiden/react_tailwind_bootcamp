@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(vite-createor)",
+      "Bash(npm install)",
+      "Skill(tailwind-v4-installer)",
+      "Bash(npm install:*)",
+      "Bash(timeout 5 npm run dev:*)",
+      "Bash(npm run dev:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
