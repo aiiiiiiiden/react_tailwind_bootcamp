@@ -6,7 +6,9 @@
       "Skill(tailwind-v4-installer)",
       "Bash(npm install:*)",
       "Bash(timeout 5 npm run dev:*)",
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(npm create:*)",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []

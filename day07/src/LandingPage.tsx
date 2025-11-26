@@ -5,19 +5,19 @@ export default function LandingPage() {
             {/* Sticky Navigation */}
             <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
                 <div className="max-w-7xl mx-auto px-4 py-4">
-                <div className="flex items-center justify-between">
-                    <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    MyApp
+                    <div className="flex items-center justify-between">
+                        <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        MyApp
+                        </div>
+                        <div className="hidden md:flex gap-8">
+                            <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
+                            <a href="#pricing" className="text-gray-600 hover:text-gray-900">Pricing</a>
+                            <a href="#about" className="text-gray-600 hover:text-gray-900">About</a>
+                        </div>
+                        <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+                        Sign Up
+                        </button>
                     </div>
-                    <div className="hidden md:flex gap-8">
-                        <a href="#features" className="text-gray-600 hover:text-gray-900">Features</a>
-                        <a href="#pricing" className="text-gray-600 hover:text-gray-900">Pricing</a>
-                        <a href="#about" className="text-gray-600 hover:text-gray-900">About</a>
-                    </div>
-                    <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                    Sign Up
-                    </button>
-                </div>
                 </div>
             </nav>
 
