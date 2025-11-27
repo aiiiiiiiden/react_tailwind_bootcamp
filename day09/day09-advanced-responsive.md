@@ -5,6 +5,7 @@ paginate: true
 ---
 
 # Day 9: 반응형 레이아웃 고급
+
 ## React + Tailwind Bootcamp
 
 **학습 시간**: 30분
@@ -26,20 +27,18 @@ paginate: true
 ## Container Queries란?
 
 ### 기존 Media Query
+
 ```jsx
 // 화면 크기 기준
-<div className="md:text-lg">
-  // 화면이 768px 이상이면 text-lg
-</div>
+<div className="md:text-lg">// 화면이 768px 이상이면 text-lg</div>
 ```
 
 ### Container Query (v4)
+
 ```jsx
 // 부모 컨테이너 크기 기준
 <div className="@container">
-  <div className="@md:text-lg">
-    // 부모가 768px 이상이면 text-lg
-  </div>
+  <div className="@md:text-lg">// 부모가 768px 이상이면 text-lg</div>
 </div>
 ```
 
@@ -53,13 +52,10 @@ paginate: true
 export default function ContainerQueryDemo() {
   return (
     <div className="p-8 space-y-8">
-
       {/* 좁은 컨테이너 */}
       <div className="@container max-w-md bg-gray-100 p-4">
         <div className="bg-white p-4 rounded-lg">
-          <h3 className="text-sm @md:text-xl font-bold">
-            좁은 컨테이너
-          </h3>
+          <h3 className="text-sm @md:text-xl font-bold">좁은 컨테이너</h3>
           <p className="text-xs @md:text-base text-gray-600 mt-2">
             이 카드는 부모가 좁으면 작은 글씨, 넓으면 큰 글씨를 사용합니다.
           </p>
@@ -69,15 +65,12 @@ export default function ContainerQueryDemo() {
       {/* 넓은 컨테이너 */}
       <div className="@container max-w-4xl bg-gray-100 p-4">
         <div className="bg-white p-4 rounded-lg">
-          <h3 className="text-sm @md:text-xl font-bold">
-            넓은 컨테이너
-          </h3>
+          <h3 className="text-sm @md:text-xl font-bold">넓은 컨테이너</h3>
           <p className="text-xs @md:text-base text-gray-600 mt-2">
             같은 컴포넌트지만 부모가 넓어서 큰 글씨로 표시됩니다!
           </p>
         </div>
       </div>
-
     </div>
   );
 }
@@ -111,10 +104,8 @@ export default function ContainerQueryDemo() {
 function ProductCard({ product }) {
   return (
     <div className="@container bg-white rounded-lg shadow-sm overflow-hidden">
-
       {/* 이미지와 콘텐츠 */}
       <div className="flex flex-col @md:flex-row">
-
         {/* 이미지 */}
         <img
           src={product.image}
@@ -139,29 +130,41 @@ function ProductCard({ product }) {
             </button>
           </div>
         </div>
-
       </div>
-
     </div>
   );
 }
 
 export default function ProductGrid() {
   const products = [
-    { name: 'Product 1', price: 99, image: 'https://picsum.photos/400/300?1', description: '고품질 제품' },
-    { name: 'Product 2', price: 149, image: 'https://picsum.photos/400/300?2', description: '최고의 선택' },
+    {
+      name: "Product 1",
+      price: 99,
+      image: "https://picsum.photos/400/300?1",
+      description: "고품질 제품",
+    },
+    {
+      name: "Product 2",
+      price: 149,
+      image: "https://picsum.photos/400/300?2",
+      description: "최고의 선택",
+    },
   ];
 
   return (
     <div className="p-8 space-y-4">
       {/* 좁은 그리드 */}
       <div className="max-w-md">
-        {products.map((p, i) => <ProductCard key={i} product={p} />)}
+        {products.map((p, i) => (
+          <ProductCard key={i} product={p} />
+        ))}
       </div>
 
       {/* 넓은 그리드 */}
       <div className="max-w-4xl">
-        {products.map((p, i) => <ProductCard key={i} product={p} />)}
+        {products.map((p, i) => (
+          <ProductCard key={i} product={p} />
+        ))}
       </div>
     </div>
   );
@@ -173,6 +176,7 @@ export default function ProductGrid() {
 ## Auto-fit vs Auto-fill
 
 ### Auto-fill
+
 ```jsx
 // 빈 공간이 생김
 <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
@@ -181,6 +185,7 @@ export default function ProductGrid() {
 ```
 
 ### Auto-fit
+
 ```jsx
 // 빈 공간 없이 꽉 채움
 <div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4">
@@ -200,12 +205,19 @@ export default function AutoGrid() {
 
   return (
     <div className="p-8 space-y-12">
-
       <div>
         <h2 className="text-2xl font-bold mb-4">Auto-fill (빈 공간 유지)</h2>
-        <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}>
-          {items.map(i => (
-            <div key={i} className="bg-blue-500 text-white p-8 rounded-lg text-center font-bold">
+        <div
+          className="grid gap-4"
+          style={{
+            gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+          }}
+        >
+          {items.map((i) => (
+            <div
+              key={i}
+              className="bg-blue-500 text-white p-8 rounded-lg text-center font-bold"
+            >
               {i}
             </div>
           ))}
@@ -214,15 +226,22 @@ export default function AutoGrid() {
 
       <div>
         <h2 className="text-2xl font-bold mb-4">Auto-fit (빈 공간 채움)</h2>
-        <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-          {items.map(i => (
-            <div key={i} className="bg-green-500 text-white p-8 rounded-lg text-center font-bold">
+        <div
+          className="grid gap-4"
+          style={{
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          }}
+        >
+          {items.map((i) => (
+            <div
+              key={i}
+              className="bg-green-500 text-white p-8 rounded-lg text-center font-bold"
+            >
               {i}
             </div>
           ))}
         </div>
       </div>
-
     </div>
   );
 }
@@ -241,8 +260,11 @@ export default function AspectRatioGrid() {
   return (
     <div className="p-8">
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {images.map(i => (
-          <div key={i} className="aspect-square bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white text-2xl font-bold hover:scale-105 transition-transform">
+        {images.map((i) => (
+          <div
+            key={i}
+            className="aspect-square bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white text-2xl font-bold hover:scale-105 transition-transform"
+          >
             {i}
           </div>
         ))}
@@ -262,11 +284,12 @@ export default function AspectRatioGrid() {
 export default function ResponsiveDashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
-
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
         <div className="px-4 py-4 flex items-center justify-between">
-          <h1 className="text-xl md:text-2xl font-bold text-gray-900">Dashboard</h1>
+          <h1 className="text-xl md:text-2xl font-bold text-gray-900">
+            Dashboard
+          </h1>
           <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm md:text-base">
             New Report
           </button>
@@ -274,21 +297,50 @@ export default function ResponsiveDashboard() {
       </header>
 
       <div className="p-4 md:p-6 lg:p-8">
-
         {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
           {[
-            { label: 'Total Revenue', value: '$45,231', change: '+20.1%', color: 'blue' },
-            { label: 'New Users', value: '2,345', change: '+12.5%', color: 'green' },
-            { label: 'Total Orders', value: '1,234', change: '-4.3%', color: 'red' },
-            { label: 'Conversion', value: '3.24%', change: '+1.2%', color: 'purple' },
+            {
+              label: "Total Revenue",
+              value: "$45,231",
+              change: "+20.1%",
+              color: "blue",
+            },
+            {
+              label: "New Users",
+              value: "2,345",
+              change: "+12.5%",
+              color: "green",
+            },
+            {
+              label: "Total Orders",
+              value: "1,234",
+              change: "-4.3%",
+              color: "red",
+            },
+            {
+              label: "Conversion",
+              value: "3.24%",
+              change: "+1.2%",
+              color: "purple",
+            },
           ].map((stat, i) => (
             <div key={i} className="@container">
               <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
-                <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2">{stat.label}</div>
+                <div className="text-xs md:text-sm text-gray-600 mb-1 md:mb-2">
+                  {stat.label}
+                </div>
                 <div className="flex items-end justify-between">
-                  <div className="text-2xl @md:text-3xl font-bold text-gray-900">{stat.value}</div>
-                  <div className={`text-xs md:text-sm font-semibold ${stat.change.startsWith('+') ? 'text-green-600' : 'text-red-600'}`}>
+                  <div className="text-2xl @md:text-3xl font-bold text-gray-900">
+                    {stat.value}
+                  </div>
+                  <div
+                    className={`text-xs md:text-sm font-semibold ${
+                      stat.change.startsWith("+")
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
                     {stat.change}
                   </div>
                 </div>
@@ -299,15 +351,18 @@ export default function ResponsiveDashboard() {
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
-
           {/* Chart - 2/3 width on desktop */}
           <div className="lg:col-span-2 @container">
             <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
-              <h2 className="text-lg @md:text-xl font-semibold text-gray-900 mb-4">Sales Overview</h2>
+              <h2 className="text-lg @md:text-xl font-semibold text-gray-900 mb-4">
+                Sales Overview
+              </h2>
               <div className="h-64 md:h-80 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">📊</div>
-                  <p className="text-gray-600 text-sm md:text-base">Chart Placeholder</p>
+                  <p className="text-gray-600 text-sm md:text-base">
+                    Chart Placeholder
+                  </p>
                 </div>
               </div>
             </div>
@@ -316,15 +371,22 @@ export default function ResponsiveDashboard() {
           {/* Recent Activity - 1/3 width on desktop */}
           <div className="@container">
             <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
-              <h2 className="text-lg @md:text-xl font-semibold text-gray-900 mb-4">Recent Activity</h2>
+              <h2 className="text-lg @md:text-xl font-semibold text-gray-900 mb-4">
+                Recent Activity
+              </h2>
               <div className="space-y-4">
-                {[1, 2, 3, 4, 5].map(i => (
-                  <div key={i} className="flex gap-3 pb-4 border-b border-gray-100 last:border-0">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <div
+                    key={i}
+                    className="flex gap-3 pb-4 border-b border-gray-100 last:border-0"
+                  >
                     <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-blue-600 font-semibold">U{i}</span>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-medium text-gray-900 truncate">User {i} made a purchase</p>
+                      <p className="text-sm font-medium text-gray-900 truncate">
+                        User {i} made a purchase
+                      </p>
                       <p className="text-xs text-gray-500">{i} minutes ago</p>
                     </div>
                   </div>
@@ -332,29 +394,37 @@ export default function ResponsiveDashboard() {
               </div>
             </div>
           </div>
-
         </div>
 
         {/* Bottom Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-6 md:mt-8">
-
           {/* Top Products */}
           <div className="@container">
             <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
-              <h2 className="text-lg @md:text-xl font-semibold text-gray-900 mb-4">Top Products</h2>
+              <h2 className="text-lg @md:text-xl font-semibold text-gray-900 mb-4">
+                Top Products
+              </h2>
               <div className="space-y-3">
-                {['Product A', 'Product B', 'Product C', 'Product D'].map((name, i) => (
-                  <div key={i} className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded flex-shrink-0"></div>
-                      <div>
-                        <div className="text-sm font-medium text-gray-900">{name}</div>
-                        <div className="text-xs text-gray-500">{(i + 1) * 123} sales</div>
+                {["Product A", "Product B", "Product C", "Product D"].map(
+                  (name, i) => (
+                    <div key={i} className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded flex-shrink-0"></div>
+                        <div>
+                          <div className="text-sm font-medium text-gray-900">
+                            {name}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            {(i + 1) * 123} sales
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-sm font-semibold text-gray-900">
+                        ${(i + 1) * 1234}
                       </div>
                     </div>
-                    <div className="text-sm font-semibold text-gray-900">${(i + 1) * 1234}</div>
-                  </div>
-                ))}
+                  )
+                )}
               </div>
             </div>
           </div>
@@ -362,18 +432,22 @@ export default function ResponsiveDashboard() {
           {/* Traffic Sources */}
           <div className="@container">
             <div className="bg-white p-4 md:p-6 rounded-lg shadow-sm border border-gray-100">
-              <h2 className="text-lg @md:text-xl font-semibold text-gray-900 mb-4">Traffic Sources</h2>
+              <h2 className="text-lg @md:text-xl font-semibold text-gray-900 mb-4">
+                Traffic Sources
+              </h2>
               <div className="space-y-4">
                 {[
-                  { name: 'Organic Search', value: 45, color: 'blue' },
-                  { name: 'Direct', value: 30, color: 'green' },
-                  { name: 'Social Media', value: 15, color: 'purple' },
-                  { name: 'Referral', value: 10, color: 'yellow' },
+                  { name: "Organic Search", value: 45, color: "blue" },
+                  { name: "Direct", value: 30, color: "green" },
+                  { name: "Social Media", value: 15, color: "purple" },
+                  { name: "Referral", value: 10, color: "yellow" },
                 ].map((source, i) => (
                   <div key={i}>
                     <div className="flex justify-between text-sm mb-1">
                       <span className="text-gray-700">{source.name}</span>
-                      <span className="font-semibold text-gray-900">{source.value}%</span>
+                      <span className="font-semibold text-gray-900">
+                        {source.value}%
+                      </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-2">
                       <div
@@ -386,11 +460,8 @@ export default function ResponsiveDashboard() {
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
 }
@@ -401,16 +472,19 @@ export default function ResponsiveDashboard() {
 ## 핵심 정리
 
 ### Container Queries
+
 - `@container`: 컨테이너로 지정
 - `@md:`, `@lg:`: 컨테이너 크기 기준 스타일
 - **장점**: 재사용 가능한 반응형 컴포넌트
 
 ### Auto Grid
+
 - `auto-fill`: 빈 공간 유지
 - `auto-fit`: 빈 공간 채움
 - **패턴**: `grid-cols-[repeat(auto-fit,minmax(250px,1fr))]`
 
 ### 반응형 대시보드
+
 - Stats: `grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`
 - Main: `grid-cols-1 lg:grid-cols-3`
 - `lg:col-span-2`: 데스크톱에서 2칸 차지
@@ -430,6 +504,7 @@ export default function ResponsiveDashboard() {
 ## 내일 배울 내용
 
 ### Day 10: Interactive States
+
 - Hover, Focus, Active 상태
 - Transitions와 Transforms
 - 실습: 인터랙티브 버튼, 카드
@@ -441,10 +516,12 @@ export default function ResponsiveDashboard() {
 ## 과제 (선택)
 
 1. **Container Query 카드**
+
    - 좁을 때: 세로 레이아웃
    - 넓을 때: 가로 레이아웃
 
 2. **Auto-fit 갤러리**
+
    - 이미지 12개
    - 자동으로 반응형 그리드
 
