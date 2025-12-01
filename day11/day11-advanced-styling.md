@@ -5,6 +5,7 @@ paginate: true
 ---
 
 # Day 11: 고급 스타일링 기법
+
 ## React + Tailwind Bootcamp
 
 **학습 시간**: 30분
@@ -27,17 +28,17 @@ paginate: true
 
 ```jsx
 // Background Gradient
-bg-gradient-to-r        // 왼쪽 → 오른쪽
-bg-gradient-to-l        // 오른쪽 → 왼쪽
-bg-gradient-to-t        // 아래 → 위
-bg-gradient-to-b        // 위 → 아래
-bg-gradient-to-br       // 왼쪽 위 → 오른쪽 아래
-bg-gradient-to-tr       // 왼쪽 아래 → 오른쪽 위
+bg - gradient - to - r; // 왼쪽 → 오른쪽
+bg - gradient - to - l; // 오른쪽 → 왼쪽
+bg - gradient - to - t; // 아래 → 위
+bg - gradient - to - b; // 위 → 아래
+bg - gradient - to - br; // 왼쪽 위 → 오른쪽 아래
+bg - gradient - to - tr; // 왼쪽 아래 → 오른쪽 위
 
 // From/Via/To
-from-blue-500    // 시작 색
-via-purple-500   // 중간 색
-to-pink-500      // 끝 색
+from - blue - 500; // 시작 색
+via - purple - 500; // 중간 색
+to - pink - 500; // 끝 색
 ```
 
 ---
@@ -48,7 +49,6 @@ to-pink-500      // 끝 색
 export default function GradientDemo() {
   return (
     <div className="p-8 space-y-6">
-
       {/* 2색 Gradient */}
       <div className="h-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white text-xl font-bold">
         2 Color Gradient
@@ -73,7 +73,6 @@ export default function GradientDemo() {
       <div className="h-32 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg flex items-center justify-center text-gray-900 text-xl font-bold border border-gray-200">
         Subtle Gradient
       </div>
-
     </div>
   );
 }
@@ -111,15 +110,15 @@ shadow-inner     // 내부 그림자
 export default function ShadowDemo() {
   return (
     <div className="p-8 bg-gray-100">
-
       <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-
-        {['sm', '', 'md', 'lg', 'xl', '2xl'].map((size, i) => (
+        {["sm", "", "md", "lg", "xl", "2xl"].map((size, i) => (
           <div
             key={i}
-            className={`bg-white p-6 rounded-lg shadow${size ? '-' + size : ''} flex items-center justify-center font-semibold text-gray-900`}
+            className={`bg-white p-6 rounded-lg shadow${
+              size ? "-" + size : ""
+            } flex items-center justify-center font-semibold text-gray-900`}
           >
-            shadow{size ? '-' + size : ''}
+            shadow{size ? "-" + size : ""}
           </div>
         ))}
 
@@ -141,9 +140,7 @@ export default function ShadowDemo() {
         <div className="bg-white p-6 rounded-lg shadow hover:shadow-2xl transition-shadow duration-300 cursor-pointer flex items-center justify-center font-semibold text-gray-900">
           Hover Me
         </div>
-
       </div>
-
     </div>
   );
 }
@@ -173,21 +170,16 @@ export default function Glassmorphism() {
     <div
       className="min-h-screen p-8 flex items-center justify-center bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500"
       style={{
-        backgroundImage: 'url(https://picsum.photos/1920/1080)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundImage: "url(https://picsum.photos/1920/1080)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
-
       {/* Glass Card */}
       <div className="max-w-md w-full">
-
         {/* Frosted Glass Effect */}
         <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 shadow-2xl">
-
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Glassmorphism
-          </h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Glassmorphism</h2>
 
           <p className="text-white/90 mb-6 leading-relaxed">
             반투명 배경과 backdrop-blur를 활용한 현대적인 디자인 트렌드입니다.
@@ -208,11 +200,8 @@ export default function Glassmorphism() {
               Sign In
             </button>
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
 }
@@ -244,17 +233,21 @@ mix-blend-color-dodge  mix-blend-color-burn   mix-blend-difference
 export default function ModernHero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900">
-
       {/* Animated Background Gradients */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse" style={{ animationDelay: '4s' }}></div>
+        <div
+          className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+        <div
+          className="absolute bottom-0 left-1/2 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
+          style={{ animationDelay: "4s" }}
+        ></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white text-sm mb-8">
           <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
@@ -272,8 +265,8 @@ export default function ModernHero() {
 
         {/* Description */}
         <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Tailwind CSS v4와 최신 디자인 트렌드로 만드는
-          아름다운 웹 경험을 시작하세요.
+          Tailwind CSS v4와 최신 디자인 트렌드로 만드는 아름다운 웹 경험을
+          시작하세요.
         </p>
 
         {/* CTA Buttons */}
@@ -281,7 +274,9 @@ export default function ModernHero() {
           <button className="group relative px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg overflow-hidden">
             <span className="relative z-10">시작하기</span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <span className="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity text-white">시작하기</span>
+            <span className="relative z-10 opacity-0 group-hover:opacity-100 transition-opacity text-white">
+              시작하기
+            </span>
           </button>
 
           <button className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 text-white font-semibold rounded-lg transition-all">
@@ -292,26 +287,25 @@ export default function ModernHero() {
         {/* Stats */}
         <div className="mt-20 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
           {[
-            { number: '10K+', label: '사용자' },
-            { number: '99%', label: '만족도' },
-            { number: '24/7', label: '지원' },
+            { number: "10K+", label: "사용자" },
+            { number: "99%", label: "만족도" },
+            { number: "24/7", label: "지원" },
           ].map((stat, i) => (
-            <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6">
+            <div
+              key={i}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+            >
               <div className="text-3xl md:text-4xl font-bold text-white mb-2">
                 {stat.number}
               </div>
-              <div className="text-sm text-gray-400">
-                {stat.label}
-              </div>
+              <div className="text-sm text-gray-400">{stat.label}</div>
             </div>
           ))}
         </div>
-
       </div>
 
       {/* Bottom Fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent"></div>
-
     </section>
   );
 }
@@ -325,9 +319,7 @@ export default function ModernHero() {
 export default function PremiumCards() {
   return (
     <div className="min-h-screen bg-gray-900 p-8 flex items-center justify-center">
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl">
-
         {/* Basic */}
         <div className="group relative bg-gradient-to-br from-gray-800 to-gray-900 p-8 rounded-2xl border border-gray-700 hover:border-blue-500 transition-all duration-300">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
@@ -339,7 +331,7 @@ export default function PremiumCards() {
             </div>
 
             <ul className="space-y-3 mb-8">
-              {['Feature 1', 'Feature 2', 'Feature 3'].map((feature, i) => (
+              {["Feature 1", "Feature 2", "Feature 3"].map((feature, i) => (
                 <li key={i} className="flex items-center gap-2 text-gray-300">
                   <span className="text-green-400">✓</span>
                   {feature}
@@ -355,7 +347,6 @@ export default function PremiumCards() {
 
         {/* Pro (Highlight) */}
         <div className="group relative bg-gradient-to-br from-blue-600 to-purple-600 p-8 rounded-2xl shadow-2xl shadow-blue-500/50 hover:shadow-blue-500/70 hover:scale-105 transition-all duration-300">
-
           {/* Popular Badge */}
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-yellow-400 text-gray-900 text-sm font-bold rounded-full">
             POPULAR
@@ -368,7 +359,12 @@ export default function PremiumCards() {
             </div>
 
             <ul className="space-y-3 mb-8">
-              {['Everything in Basic', 'Feature 4', 'Feature 5', 'Priority Support'].map((feature, i) => (
+              {[
+                "Everything in Basic",
+                "Feature 4",
+                "Feature 5",
+                "Priority Support",
+              ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-2 text-white">
                   <span className="text-yellow-300">✓</span>
                   {feature}
@@ -388,12 +384,15 @@ export default function PremiumCards() {
 
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
-            <div className="text-4xl font-bold text-white mb-6">
-              Custom
-            </div>
+            <div className="text-4xl font-bold text-white mb-6">Custom</div>
 
             <ul className="space-y-3 mb-8">
-              {['Everything in Pro', 'Custom Solutions', 'Dedicated Support', 'SLA'].map((feature, i) => (
+              {[
+                "Everything in Pro",
+                "Custom Solutions",
+                "Dedicated Support",
+                "SLA",
+              ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-2 text-gray-300">
                   <span className="text-purple-400">✓</span>
                   {feature}
@@ -406,9 +405,7 @@ export default function PremiumCards() {
             </button>
           </div>
         </div>
-
       </div>
-
     </div>
   );
 }
@@ -419,16 +416,19 @@ export default function PremiumCards() {
 ## 핵심 정리
 
 ### Gradients
+
 - `bg-gradient-to-*`: 방향
 - `from-*`, `via-*`, `to-*`: 색상
 - `bg-clip-text text-transparent`: 텍스트 그라데이션
 
 ### Shadows & Blur
+
 - `shadow-*`: 그림자 크기
 - `shadow-blue-500/50`: 컬러 그림자
 - `backdrop-blur-*`: 배경 흐림 (Glassmorphism)
 
 ### 고급 기법
+
 - Glassmorphism: `bg-white/10 backdrop-blur-lg`
 - Mix Blend Mode: `mix-blend-multiply`
 - Animated Backgrounds: blur + pulse
@@ -448,6 +448,7 @@ export default function PremiumCards() {
 ## 내일 배울 내용
 
 ### Day 12: 실전 프로젝트 1 - 랜딩 페이지
+
 - Hero, Features, Testimonials
 - 지금까지 배운 모든 기술 종합
 - 실습: 완성도 높은 랜딩 페이지
@@ -459,10 +460,12 @@ export default function PremiumCards() {
 ## 과제 (선택)
 
 1. **Glassmorphism 로그인 페이지**
+
    - 배경 이미지 + frosted glass 효과
    - 입력 폼 + 버튼
 
 2. **Pricing 카드**
+
    - 3개 플랜
    - 그라데이션 + 그림자 활용
 
